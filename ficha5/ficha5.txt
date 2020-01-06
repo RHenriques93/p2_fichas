@@ -1,0 +1,27 @@
+ex.4) 
+
+SELECT nome, capacidade FROM sala;
+
+------------------------------------------
+
+ex.5)
+
+SELECT nome_pt AS "Nome em Português", nome_original FROM filme WHERE id_realizador=2;
+
+------------------------------------------
+
+ex.6)
+
+SELECT filme.nome_pt FROM filme JOIN realizador ON filme.id_realizador = realizador.id_realizador WHERE nome LIKE 'Manoel de Oliveira';
+
+------------------------------------------
+
+ex.7)
+
+SELECT exibicao.data FROM exibicao JOIN filme ON exibicao.id_filme = filme.id_filme WHERE filme.nome_pt LIKE 'O Gebo e a Sombra'; 
+
+------------------------------------------
+
+ex.8)
+
+SELECT filme.nome_pt FROM filme JOIN exibicao ON filme.id_filme = exibicao.id_filme JOIN sala ON exibicao.id_sala = sala.id_sala WHERE sala.id_sala=1 AND exibicao.data LIKE '%2019%';
